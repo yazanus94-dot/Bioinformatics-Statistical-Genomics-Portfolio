@@ -1,0 +1,31 @@
+{
+  "n_genes": 3000,
+  "n_tested": 2978,
+  "n_called_de": 86,
+  "n_true_de": 120,
+  "true_positives": 85,
+  "false_positives": 1,
+  "sensitivity_among_all_true_de": 0.7083333333333334,
+  "empirical_fdr": 0.011627906976744186,
+  "size_factor_correlation_with_truth": 0.999464352189831,
+  "top_enriched_sets": [
+    {
+      "gene_set": "set_00",
+      "overlap": 31,
+      "set_size": 60,
+      "q_value": 9.16075350130061e-33
+    },
+    {
+      "gene_set": "set_07",
+      "overlap": 20,
+      "set_size": 58,
+      "q_value": 1.9232574590218456e-16
+    },
+    {
+      "gene_set": "set_22",
+      "overlap": 1,
+      "set_size": 60,
+      "q_value": 1.0
+    }
+  ]
+}

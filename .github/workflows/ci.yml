@@ -1,0 +1,41 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  projects:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - project1-case-control-variant-association
+          - project2-rnaseq-differential-expression
+        python-version: ["3.11", "3.12", "3.13"]
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: ${{ matrix.project }}/requirements.txt
+      - run: pip install -r requirements.txt
+      - name: Unit tests
+        run: python -m pytest
+      - name: Full analysis run
+        run: python run_analysis.py
+      - name: Verify worked example
+        run: python verify_task.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ matrix.project }}-py${{ matrix.python-version }}
+          path: ${{ matrix.project }}/results
+          retention-days: 14

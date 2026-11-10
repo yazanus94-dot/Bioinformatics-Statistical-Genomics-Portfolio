@@ -1,0 +1,20 @@
+{
+  "n_variants": 2000,
+  "n_fail_hwe": 15,
+  "n_fail_maf": 0,
+  "n_pass_qc": 1985,
+  "fdr_threshold": 0.05,
+  "lambda_gc_naive": 0.8552564712183708,
+  "lambda_gc_qc": 0.8441879167001081,
+  "naive_discoveries": 26,
+  "qc_discoveries": 10,
+  "bonferroni_discoveries_qc": 9,
+  "n_causal_truth": 10,
+  "naive_true_positives": 10,
+  "naive_false_positives": 16,
+  "naive_artifact_hits": 14,
+  "qc_true_positives": 10,
+  "qc_false_positives": 0,
+  "artifacts_removed_by_qc": 15,
+  "n_artifacts_truth": 15
+}
